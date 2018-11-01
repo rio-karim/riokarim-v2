@@ -1,18 +1,16 @@
 (function(window){
   "use strict";
-  function inject()
+  const UTIL = new Inject().util;
+  function Inject()
   {
-    let _source = {};
-    _source.cookie = _cookie();
-    _source.doc = _doc();
-    return _source;
+    this.cookie = new Cookie;
+    this.util = new Util;
+    this.el = _element;
   }
 
-  function _cookie()
+  function Cookie()
   {
-    let _cookie = {};
-
-    _cookie.set  = function( name, value, days)
+    this.set  = function( name, value, days)
     {
       let expires = "";
       if (days)
@@ -25,7 +23,7 @@
       document.cookie = name + "=" + (value || "")  + expires + "; path=/";
     };
 
-    _cookie.get = function(name)
+    this.get = function(name)
     {
       let nameEQ = name + "=";
       let ca = document.cookie.split(';');
@@ -39,34 +37,62 @@
       }
       return false;
     };
-
-    return _cookie;
   }
 
-  function _doc(element, className, content, parent, click){
-  if(arguments[1])
+  function Util()
   {
-    const htmlRgx = new RegExp('/^/');
-    let el = document.createElement(element);
-    if(typeof className === 'string' || Array.isArray((className)))
-      el.classList.add(className);
+    let self = this;
+    self.count = 0;
+    self.incr = function(i)
+    {
+      self.count++;
+      return i+1
+    };
+    self.elAssign = function(element)
+    {
+      element.setAttribute('data-ij', self.incr(self.count));
+      return element
+    };
+    self.error = function(source, error)
+    {
+      console.error(source, error);
+      console.warn("INJECT: An error has caused a critical compilation issue.")
+    };
+  }
 
-    if(htmlRgx.test(content))
+  function _element(element, className, content, parent, click){
+    let ret;
+    const exists = !!document.querySelector(parent.selector);
+    if (!exists)
+      UTIL.error(parent, " is not in the current document, please check your Parent parameters.");
+
+    let el = UTIL.elAssign(document.createElement(element));
+    if (typeof className === 'string' || Array.isArray((className)))
+      el.classList.add(className);
+    if (content.includes('<') || content.includes('>'))
       el.innerHTML = content;
     else
       el.innerText = content;
-
-    if(click)
+    if (click)
       el.onclick = click;
-    if(parent)
-    {
-      parent.appendChild(el);
+    ret = el;
+    if (parent.length) {
+      let parentAppend = parent instanceof Element ? parent : parent[0];
+      parentAppend.appendChild(el);
+      let selector = `${el.nodeName}[data-ij='${el.dataset.ij}']`;
+      ret = Object.assign(document.querySelector(selector), {
+        ijContent: function(text)
+        {
+          if (text.includes('<') || text.includes('>'))
+            this.innerHTML = text;
+          else
+            this.innerText = text;
+        }
+      });
     }
-    return el;
-  }
-  let _doc = {};
+    return ret;
   }
 
-  if(!window.inject)
-    window.ij = inject();
+  if(!window.ij)
+    window.ij = new Inject();
 })(window);

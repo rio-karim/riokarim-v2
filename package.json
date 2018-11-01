@@ -1,8 +1,8 @@
 {
-    "title": "Simple Sidebar",
-    "name": "startbootstrap-simple-sidebar",
-    "version": "4.1.1",
-    "description": "A simple sidbar navigation HTMl template built with Bootstrap",
+    "title": "Rio Karim | Web Developer",
+    "name": "riokarim",
+    "version": "4.0.0",
+    "description": "Rio Karim | Web Developer - Node JS",
     "keywords": [
         "css",
         "sass",
@@ -11,23 +11,17 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/simple-sidebar",
-    "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/issues",
-        "email": "feedback@startbootstrap.com"
-    },
+    "homepage": "http://www.riokarim.co.uk",
     "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
+    "author": "Rio Karim",
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-simple-sidebar.git"
+        "url": "https://github.com/rio-karim/riokarim"
     },
     "dependencies": {
         "bootstrap": "4.1.1",
-        "jquery": "3.3.1"
+        "jquery": "3.3.1",
+        "underscore": "^1.9.1"
     },
     "devDependencies": {
         "browser-sync": "2.24.5",

@@ -1,24 +1,19 @@
 <!doctype html>
 <html lang="en-US">
     <head>
-        <!--
-        Site Data
-        -->
+        <!--Site Data-->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="canonical" href="https://www.riokarim.com/">
         <title>Rio Karim | Web Developer</title>
-
-        <!--
-        SEO Data
-        -->
+        <!--SEO Data-->
         <!--
         <meta name=”google-site-verification” content=“B5QHUWNuEQGDUWttu6FqmNM5ECQ_2CpzLfcCytRbrEk” />
         <meta name=”alexaVerifyID” content=“WJi_Y4O0K4M8sinO-p5nSZ9ssDI” />
         <meta name=”msvalidate.01″ content=“6C7D022907E51B82307D7E77E0D16D30”/>
         -->
-        <meta name="robots" content="noindex, follow">
+        <meta name="robots" content="index, nofollow">
         <meta name="description"
               content="A group of U.S. Marines, under command of
                    a renegade general, take over Alcatraz and
@@ -43,64 +38,83 @@
                    a renegade general, take over Alcatraz and
                    threaten San Francisco Bay with biological
                    weapons."/>
+        <!--RESOURCES-->
+        <link rel="manifest" href="manifest.json">
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/vars.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <link rel="shortcut icon" href="resources/images/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="resources/images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="resources/images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="resources/images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="resources/images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="resources/images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="resources/images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="resources/images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="resources/images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="resources/images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="resources/images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="resources/images/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <!--ANALYTICS-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123020070-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        <!--
-        Dependencies
-        -->
+          gtag('config', 'UA-123020070-1');
+        </script>
+        <!--Dependencies-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/media.css">
         <script src="vendor/jquery/jquery.slim.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.js"></script>
         <script src="vendor/inject/inject.js"></script>
-        <!--
-        jQuery
-        Bootstrap
-        Inject
-        -->
-        <script></script>
+        <script src="vendor/underscore/underscore-min.js"></script>
     </head>
     <body>
 
-    <div id="wrapper">
+    <div class="wrapper">
 
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
+        <div class="sidebar-wrapper">
+            <nav class="sidebar-nav">
+                <a href="" class="sidebar-nav__item">1</a>
+                <a href="" class="sidebar-nav__item">2</a>
+                <a href="" class="sidebar-nav__item">3</a>
+                <a href="" class="sidebar-nav__item">4</a>
+                <a href="" class="sidebar-nav__item">5</a>
+            </nav>
+            <nav class="sidebar-social">
+                <a href="" class="sidebar-nav__item">6</a>
+                <a href="" class="sidebar-nav__item">7</a>
+                <a href="" class="sidebar-nav__item">8</a>
+                <a href="" class="sidebar-nav__item">9</a>
+            </nav>
         </div>
 
-        <div id="page-content-wrapper">
+        <div class="content-wrapper">
             <div class="container-fluid">
-                <h1>Simple Sidebar</h1>
-                <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+                <div class="row">
+                    <div class="col col-left">
+                        <h1 class="header">Hi,<br> I'm <span class="logo"></span>io,<br> web developer.</h1>
+                        <h2 class="subheader">Front End Developer / Node / React JS</h2>
+                        <button class="btn btn-light">Contact Me</button>
+                    </div>
+                    <div class="col col-right col-logo">
+
+                    </div>
+                </div>
+
             </div>
         </div>
 
