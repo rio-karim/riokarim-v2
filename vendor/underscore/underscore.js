@@ -393,7 +393,7 @@
   // Sample **n** random values from a collection using the modern version of the
   // [Fisher-Yates shuffle](http://en.wikipedia.org/wiki/Fisher–Yates_shuffle).
   // If **n** is not specified, returns a single random element.
-  // The internal `guard` argument allows it to work with `map`.
+  // The internal `guard` argument allows it to work.html with `map`.
   _.sample = function(obj, n, guard) {
     if (n == null || guard) {
       if (!isArrayLike(obj)) obj = _.values(obj);
@@ -495,7 +495,7 @@
 
   // Get the first element of an array. Passing **n** will return the first N
   // values in the array. Aliased as `head` and `take`. The **guard** check
-  // allows it to work with `_.map`.
+  // allows it to work.html with `_.map`.
   _.first = _.head = _.take = function(array, n, guard) {
     if (array == null || array.length < 1) return n == null ? void 0 : [];
     if (n == null || guard) return array[0];
@@ -563,7 +563,7 @@
 
   // Produce a duplicate-free version of the array. If the array has already
   // been sorted, you have the option of using a faster algorithm.
-  // The faster algorithm will not work with an iteratee if the iteratee
+  // The faster algorithm will not work.html with an iteratee if the iteratee
   // is not a one-to-one function, so providing an iteratee will disable
   // the faster algorithm.
   // Aliased as `unique`.

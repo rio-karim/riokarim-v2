@@ -2016,7 +2016,7 @@ Expr = Sizzle.selectors = {
 
 		"selected": function( elem ) {
 			// Accessing this property makes selected-by-default
-			// options in Safari work properly
+			// options in Safari work.html properly
 			if ( elem.parentNode ) {
 				elem.parentNode.selectedIndex;
 			}
@@ -3903,7 +3903,7 @@ if ( document.readyState === "complete" ||
 	// Use the handy event callback
 	document.addEventListener( "DOMContentLoaded", completed );
 
-	// A fallback to window.onload, that will always work
+	// A fallback to window.onload, that will always work.html
 	window.addEventListener( "load", completed );
 }
 
@@ -8219,7 +8219,7 @@ jQuery.isNumeric = function( obj ) {
 // way to register. Lowercase jquery is used because AMD module names are
 // derived from file names, and jQuery is normally delivered in a lowercase
 // file name. Do this after creating the global so that if an AMD module wants
-// to call noConflict to hide this version of jQuery, it will work.
+// to call noConflict to hide this version of jQuery, it will work.html.
 
 // Note that for maximum portability, libraries that are not jQuery should
 // declare themselves as anonymous modules, and avoid setting a global if an
