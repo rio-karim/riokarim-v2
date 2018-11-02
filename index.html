@@ -77,50 +77,55 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/media.css">
-        <script src="vendor/jquery/jquery.slim.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.js"></script>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-ui.min.js"></script>
         <script src="vendor/inject/inject.js"></script>
         <script src="vendor/underscore/underscore-min.js"></script>
+        <script async defer src="js/index.js"></script>
     </head>
     <body>
 
     <div class="wrapper">
 
         <div class="sidebar-wrapper">
-            <nav class="sidebar-nav">
-                <a href="" class="sidebar-nav__item">1</a>
-                <a href="" class="sidebar-nav__item">2</a>
-                <a href="" class="sidebar-nav__item">3</a>
-                <a href="" class="sidebar-nav__item">4</a>
-                <a href="" class="sidebar-nav__item">5</a>
-            </nav>
-            <nav class="sidebar-social">
-                <a href="" class="sidebar-nav__item">6</a>
-                <a href="" class="sidebar-nav__item">7</a>
-                <a href="" class="sidebar-nav__item">8</a>
-                <a href="" class="sidebar-nav__item">9</a>
-            </nav>
-        </div>
-
-        <div class="content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col col-left">
-                        <h1 class="header">Hi,<br> I'm <span class="logo"></span>io,<br> web developer.</h1>
-                        <h2 class="subheader">Front End Developer / Node / React JS</h2>
-                        <button class="btn btn-light">Contact Me</button>
+            <div class="sidebar-logo">
+                <img src="resources/images/logo/initial.png" alt="Logo">
+                <span>Rio</span>
+            </div>
+            <div class="sidebar-burger-menu mod model-6">
+                    <div class="menu">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"> </div>
                     </div>
-                    <div class="col col-right col-logo">
+            </div>
+            <div class="sidebar-nav">
+                <nav class="sidebar-nav__list">
+                    <div data-nav="HOME" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/house.svg" alt="Home"><span>Home</span></div>
+                    <div data-nav="ABOUT" href="" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/avatar.svg" alt="Avatar"><span>About</span></div>
+                    <div data-nav="SKILLS" href="" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/electron.svg" alt="Electron"><span>Skills</span></div>
+                    <div data-nav="WORK" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/portfolio.svg" alt="Work"><span>My Work</span></div>
+                    <div data-nav="CONTACT" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/chat-balloon.svg" alt="Chat"><span>Contact</span></div>
 
-                    </div>
-                </div>
-
+                </nav>
+            </div>
+            <div class="sidebar-social">
+                <a href="https://github.com/rio-karim" target="_blank" class="sidebar-nav__item"><img src="/resources/images/icons/github-character.svg" alt="Home"></a>
+                <a href="https://www.facebook.com/RKweb.contact" target="_blank" class="sidebar-nav__item"><img src="/resources/images/icons/facebook-logo.svg" alt="Home"></a>
+                <a href="https://www.linkedin.com/in/riokarim/" target="_blank" class="sidebar-nav__item"><img src="/resources/images/icons/linkedin-logo.svg" alt="Home"></a>
             </div>
         </div>
-
+        <div class="content-wrapper">
+        </div>
+        <div class="loader-container">
+            <div class="cssload-thecube">
+                <div class="cssload-cube cssload-c1"></div>
+                <div class="cssload-cube cssload-c2"></div>
+                <div class="cssload-cube cssload-c4"></div>
+                <div class="cssload-cube cssload-c3"></div>
+            </div>
+        </div>
     </div>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

@@ -62,17 +62,15 @@
 
   function _element(element, className, content, parent, click){
     let ret;
-    const exists = !!document.querySelector(parent.selector);
-    if (!exists)
-      UTIL.error(parent, " is not in the current document, please check your Parent parameters.");
-
     let el = UTIL.elAssign(document.createElement(element));
     if (typeof className === 'string' || Array.isArray((className)))
       el.classList.add(className);
-    if (content.includes('<') || content.includes('>'))
-      el.innerHTML = content;
-    else
-      el.innerText = content;
+    if (content){
+      if (content.includes('<') || content.includes('>'))
+        el.innerHTML = content;
+      else
+        el.innerText = content;
+    }
     if (click)
       el.onclick = click;
     ret = el;
