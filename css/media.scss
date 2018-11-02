@@ -1,1 +1,169 @@
 @import "vars";
+
+@media(max-width:950px) {
+  body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .wrapper{
+    .loader-container{
+      top:60px;
+      left:0;
+    }
+    .sidebar-wrapper {
+      position:fixed;
+      right: 0;
+      height: 60px;
+      width: 100%;
+      flex-flow: row nowrap;
+      .sidebar-logo{
+        padding:0;
+        height:100%;
+        width:60px;
+        position:absolute;
+        left:0;
+        img{
+          margin:$stdMargin auto;
+          margin-bottom:$stdMargin/4;
+          height:38%;
+          width:auto;
+        }
+        span{
+          margin: 0 auto;
+        }
+      }
+      .sidebar-social{
+        display:none;
+      }
+      .sidebar-nav{
+        position:fixed;
+        top:60px;
+        width:100%;
+        height:60px;
+        left:0;
+        transition:left 200ms ease-in-out;
+        &:not(.active){
+          left:110%;
+        }
+        &__item{
+          height:100%;
+          flex:1;
+        }
+
+        &__list{
+          display:flex;
+          flex-flow:row;
+          background: $navColor;
+          height:100%;
+          margin-top:0;
+          width:100%;
+        }
+      }
+      .sidebar-burger-menu{
+        display:block;
+
+      }
+    }
+    .content-wrapper{
+      width:100%;
+      height:calc(100% - 60px);
+      padding-top:60px;
+      margin-top:60px;
+      margin-left:0;
+      position:relative;
+      .row{
+        .col{
+          &-content{
+            width: initial;
+            max-width:100%;
+            z-index:$zIndex-2;
+            position:initial;
+            left:initial;
+            top:initial;
+            -webkit-transform:none;
+            -ms-transform:none;
+            transform:none;
+            &#hiimrio{
+              h1{
+                font-size:38px;
+                .logo{
+                    width:30px;
+                    transform: translate(2px, 1px);
+                    height:30px;
+                }
+              }
+              h2{
+                font-size:12px;
+              }
+              button{
+                font-size:12px;
+              }
+            }
+            &#timeline{
+              display: initial;
+              flex:none;
+              width:100%;
+            }
+            &#aboutme, &#skillsexperience{
+              flex:none;
+              display: initial;
+              left:0;
+              position:initial;
+              margin:0 0;
+              padding:$stdMargin;
+              width:100%;
+              background-color:$bodyColor;
+              h1{
+
+                font-size:38px;
+                margin:0 0;
+                padding:$stdMargin;
+              }
+              p{
+
+                font-size:12px;
+                padding: $stdMargin;
+                width:100%;
+                margin: 0 0;
+
+              }
+            }
+
+          }
+          &-media{
+            &#initial{
+              top: calc(15% + 60px);
+              right: -15%;
+            }
+            &#websoar{
+              height:310px;
+              width:initial;
+              top:initial;
+              display:initial;
+              position:initial;
+              right:initial;
+              animation:none;
+              background-size:cover;
+            }
+
+            &#ajaxsass{
+              display:inline-flex;
+              position:relative;
+              overflow:hidden;
+              max-width:100vw;
+              align-items:flex-start;
+              height:initial;
+              width:initial;
+              transform:scale(1.4);
+              canvas{
+                width:100%;
+                height:auto;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

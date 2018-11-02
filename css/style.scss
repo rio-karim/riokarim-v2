@@ -17,6 +17,9 @@
 html, body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background: $bodyColor;
+  height:100%;
+  width:100%;
 }
 
 body {
@@ -48,6 +51,10 @@ body {
   color:$textColor;
   font-size:$headerFontSize;
   font-weight:600;
+  &-color{
+    color:$secondaryColor;
+
+  }
 }
 
 .subheader{
@@ -55,6 +62,17 @@ body {
   font-size:$stdFontSize;
   letter-spacing:2px;
   color: $textAccentColor;
+}
+
+.text{
+  font-size:$stdFontSize;
+  line-height:20px;
+
+  letter-spacing:1px;
+}
+
+.col{
+  padding:$stdMargin;
 }
 
 .wrapper {
@@ -224,79 +242,117 @@ body {
   }
 
   .content-wrapper{
-    position:absolute;
-    left:$navWidth;
-    right:0;
+
+    position:relative;
+    width:calc(100% - 60px);
+    margin-left:60px;
     height:100%;
     background: $bodyColor;
     color: $textColor;
     opacity:1;
     transition: all 200ms ease-in-out;
+    a{
+      cursor:pointer;
+      color: $secondaryColor;
+      text-decoration:underline;
+    }
     &:not(.active){
       opacity:0;
     }
     .row{
+      overflow: hidden;
       .col{
-        &-left{
+        &-content{
+          width: 40%;
+          max-width:100%;
+          z-index:$zIndex-2;
           position:absolute;
-          left: 5%;
-          top: 50%;
+          left:5%;
+          top:50%;
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-          width: 600px;
-          z-index:$zIndex-2;
-          h1{
-            margin:$stdMargin;
-            .logo{
-              display:inline-block;
-              width:48px;
-              height:46.7px;
-              transform:translate($stdMargin/4, .8px);
-              background: url("../resources/images/logo/initial.png") center center no-repeat;
-              background-size:cover;
+          &#hiimrio{
+            h1{
+              margin:$stdMargin 0;
+              .logo{
+                display:inline-block;
+                width:48px;
+                height:46.7px;
+                transform:translate($stdMargin/4, .8px);
+                background: url("../resources/images/logo/initial.png") center center no-repeat;
+                background-size:cover;
+              }
+            }
+            h2{
+              margin:$stdMargin 0;
+            }
+            button{
+              margin:$stdMargin 0;
             }
           }
-          h2{
-            margin:$stdMargin;
+          &#timeline{
+            display:none;
           }
-          button{
-            margin:$stdMargin;
+          &#aboutme, &#skillsexperience{
+            h1{
+              margin: $stdMargin 0;
+              margin-bottom: $stdMargin * 4;
+            }
+            p{
+              margin: $stdMargin 0;
+
+            }
           }
         }
-        &-right{
-          position:fixed;
-          height:100%;
-          width:675px;
-          right:5%;
-          z-index:$zIndex-1;
-        }
-        &-logo{
-          display:none;
-          background: url("../resources/images/logo/3dLogo.png") center center no-repeat;
-          background-size:100%;
-          &.animate{
+        &-media{
+          &#ajaxsass{
+            position:absolute;
+            right:0;
+            width:90%;
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:flex-end;
+          }
+          &#initial{
+            display:none;
+            position:fixed;
+            height:100%;
+            width:675px;
+            right:5%;
+            z-index:$zIndex-1;
+            background: url("../resources/images/logo/3dLogo.png") center center no-repeat;
+            background-size:100%;
+          }
+          &#websoar{
+            display:none;
+            height:100%;
+            position:fixed;
+            width:675px;
+            right:5%;
+            opacity:.9;
             animation: float 30s ease-in-out infinite;
+            animation-delay: 500ms;
+            background-size:contain;
+            transform: translate(0, 0)skewY(-4deg);
+            background: url("../resources/images/logo/websoar.png") center center no-repeat;
+          }
+        }
+        &-contact{
+
+          &#contactme{
+
+          }
+          &#googlemaps{
+            background:red;
           }
         }
       }
     }
   }
 }
-@keyframes float {
-  0% {
-    transform: translate(0px, -1px);
-  }
-  25% {
-    transform: translate(-10px, 4px)skewY(-2deg);
-  }
-  75% {
-    transform: translate(10px, -4px) skewY(2deg);
-  }
-  100% {
-    transform: translate(0px, -3px);
-  }
-}
+
 
 .loader-container{
   position:fixed;
@@ -412,186 +468,6 @@ body {
   -moz-animation-delay: 1.04s;
 }
 
-
-
-@keyframes cssload-fold-thecube {
-  0%, 10% {
-    transform: perspective(108px) rotateX(-180deg);
-    opacity: 0;
-  }
-  25%,
-  75% {
-    transform: perspective(108px) rotateX(0deg);
-    opacity: 1;
-  }
-  90%,
-  100% {
-    transform: perspective(108px) rotateY(180deg);
-    opacity: 0;
-  }
-}
-
-@-o-keyframes cssload-fold-thecube {
-  0%, 10% {
-    -o-transform: perspective(108px) rotateX(-180deg);
-    opacity: 0;
-  }
-  25%,
-  75% {
-    -o-transform: perspective(108px) rotateX(0deg);
-    opacity: 1;
-  }
-  90%,
-  100% {
-    -o-transform: perspective(108px) rotateY(180deg);
-    opacity: 0;
-  }
-}
-
-@-ms-keyframes cssload-fold-thecube {
-  0%, 10% {
-    -ms-transform: perspective(108px) rotateX(-180deg);
-    opacity: 0;
-  }
-  25%,
-  75% {
-    -ms-transform: perspective(108px) rotateX(0deg);
-    opacity: 1;
-  }
-  90%,
-  100% {
-    -ms-transform: perspective(108px) rotateY(180deg);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes cssload-fold-thecube {
-  0%, 10% {
-    -webkit-transform: perspective(108px) rotateX(-180deg);
-    opacity: 0;
-  }
-  25%,
-  75% {
-    -webkit-transform: perspective(108px) rotateX(0deg);
-    opacity: 1;
-  }
-  90%,
-  100% {
-    -webkit-transform: perspective(108px) rotateY(180deg);
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes cssload-fold-thecube {
-  0%, 10% {
-    -moz-transform: perspective(108px) rotateX(-180deg);
-    opacity: 0;
-  }
-  25%,
-  75% {
-    -moz-transform: perspective(108px) rotateX(0deg);
-    opacity: 1;
-  }
-  90%,
-  100% {
-    -moz-transform: perspective(108px) rotateY(180deg);
-    opacity: 0;
-  }
-}
-@media(max-width:950px) {
-  .wrapper{
-    .loader-container{
-      top:60px;
-      left:0;
-    }
-    .sidebar-wrapper {
-      right: 0;
-      height: 60px;
-      width: 100%;
-      flex-flow: row nowrap;
-      .sidebar-logo{
-        padding:0;
-        height:100%;
-        width:60px;
-        position:absolute;
-        left:0;
-        img{
-          margin:$stdMargin auto;
-          margin-bottom:$stdMargin/4;
-          height:38%;
-          width:auto;
-        }
-        span{
-          margin: 0 auto;
-        }
-      }
-      .sidebar-social{
-        display:none;
-      }
-      .sidebar-nav{
-        position:fixed;
-        top:60px;
-        width:100%;
-        height:60px;
-        left:0;
-        transition:left 200ms ease-in-out;
-        &:not(.active){
-          left:110%;
-        }
-        &__item{
-          height:100%;
-          flex:1;
-        }
-
-        &__list{
-          display:flex;
-          flex-flow:row;
-          background: $navColor;
-          height:100%;
-          margin-top:0;
-          width:100%;
-        }
-      }
-      .sidebar-burger-menu{
-        display:block;
-
-      }
-    }
-    .content-wrapper{
-      top:60px;
-      left:0;
-      position:relative;
-      .row{
-        .col{
-          &-left{
-            top:calc(60px + 25%);
-            width:100%;
-            left:0;
-            h1{
-              font-size:42px;
-              .logo{
-                width:35px;
-                transform: translate(2px, 1px);
-                height:32px;
-              }
-            }
-          }
-          &-logo{
-
-            top:calc(15% + 60px);
-            right:-15%;
-          }
-        }
-      }
-
-    }
-  }
-}
-
-@keyframes fade-in{
-  from { opacity:0;}
-  to {opacity:1;}
-}
 .menu{
   height: 100%;
   width: 75px;

@@ -41,10 +41,6 @@
         <!--RESOURCES-->
         <link rel="manifest" href="manifest.json">
         <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/vars.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/media.css">
         <link rel="shortcut icon" href="resources/images/favicon/favicon-16x16.png">
         <link rel="apple-touch-icon" sizes="57x57" href="resources/images/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="resources/images/favicon/apple-icon-60x60.png">
@@ -72,15 +68,18 @@
           gtag('config', 'UA-123020070-1');
         </script>
         <!--Dependencies-->
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-grid.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/media.css">
+        <link rel="stylesheet" href="css/grid.css">
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/jquery/jquery-ui.min.js"></script>
         <script src="vendor/inject/inject.js"></script>
-        <script src="vendor/underscore/underscore-min.js"></script>
+        <script src="vendor/jquery/jquery.tagcanvas.min.js"></script>
+        <script src="vendor/underscore/underscore.js"></script>
         <script async defer src="js/index.js"></script>
     </head>
     <body>
@@ -102,8 +101,8 @@
             <div class="sidebar-nav">
                 <nav class="sidebar-nav__list">
                     <div data-nav="HOME" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/house.svg" alt="Home"><span>Home</span></div>
-                    <div data-nav="ABOUT" href="" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/avatar.svg" alt="Avatar"><span>About</span></div>
-                    <div data-nav="SKILLS" href="" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/electron.svg" alt="Electron"><span>Skills</span></div>
+                    <div data-nav="ABOUT" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/avatar.svg" alt="Avatar"><span>About</span></div>
+                    <div data-nav="SKILLS" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/electron.svg" alt="Electron"><span>Skills</span></div>
                     <div data-nav="WORK" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/portfolio.svg" alt="Work"><span>My Work</span></div>
                     <div data-nav="CONTACT" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/chat-balloon.svg" alt="Chat"><span>Contact</span></div>
 

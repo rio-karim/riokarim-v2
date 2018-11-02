@@ -1,3 +1,199 @@
+@keyframes cssload-fold-thecube {
+  0%, 10% {
+    transform: perspective(108px) rotateX(-180deg);
+    opacity: 0; }
+  25%,
+  75% {
+    transform: perspective(108px) rotateX(0deg);
+    opacity: 1; }
+  90%,
+  100% {
+    transform: perspective(108px) rotateY(180deg);
+    opacity: 0; } }
+@-o-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -o-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0; }
+  25%,
+  75% {
+    -o-transform: perspective(108px) rotateX(0deg);
+    opacity: 1; }
+  90%,
+  100% {
+    -o-transform: perspective(108px) rotateY(180deg);
+    opacity: 0; } }
+@-ms-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -ms-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0; }
+  25%,
+  75% {
+    -ms-transform: perspective(108px) rotateX(0deg);
+    opacity: 1; }
+  90%,
+  100% {
+    -ms-transform: perspective(108px) rotateY(180deg);
+    opacity: 0; } }
+@-webkit-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -webkit-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0; }
+  25%,
+  75% {
+    -webkit-transform: perspective(108px) rotateX(0deg);
+    opacity: 1; }
+  90%,
+  100% {
+    -webkit-transform: perspective(108px) rotateY(180deg);
+    opacity: 0; } }
+@-moz-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -moz-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0; }
+  25%,
+  75% {
+    -moz-transform: perspective(108px) rotateX(0deg);
+    opacity: 1; }
+  90%,
+  100% {
+    -moz-transform: perspective(108px) rotateY(180deg);
+    opacity: 0; } }
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes float {
+  0% {
+    transform: translate(0, 0) skewY(-4deg); }
+  25% {
+    transform: translate(-13px, 6px) skewY(-4deg); }
+  75% {
+    transform: translate(13px, -6px) skewY(4deg); }
+  100% {
+    transform: translate(0, 0) skewY(-4deg); } }
+@media (max-width: 950px) {
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden; }
 
+  .wrapper .loader-container {
+    top: 60px;
+    left: 0; }
+  .wrapper .sidebar-wrapper {
+    position: fixed;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    flex-flow: row nowrap; }
+    .wrapper .sidebar-wrapper .sidebar-logo {
+      padding: 0;
+      height: 100%;
+      width: 60px;
+      position: absolute;
+      left: 0; }
+      .wrapper .sidebar-wrapper .sidebar-logo img {
+        margin: 12px auto;
+        margin-bottom: 3px;
+        height: 38%;
+        width: auto; }
+      .wrapper .sidebar-wrapper .sidebar-logo span {
+        margin: 0 auto; }
+    .wrapper .sidebar-wrapper .sidebar-social {
+      display: none; }
+    .wrapper .sidebar-wrapper .sidebar-nav {
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      height: 60px;
+      left: 0;
+      transition: left 200ms ease-in-out; }
+      .wrapper .sidebar-wrapper .sidebar-nav:not(.active) {
+        left: 110%; }
+      .wrapper .sidebar-wrapper .sidebar-nav__item {
+        height: 100%;
+        flex: 1; }
+      .wrapper .sidebar-wrapper .sidebar-nav__list {
+        display: flex;
+        flex-flow: row;
+        background: #181818;
+        height: 100%;
+        margin-top: 0;
+        width: 100%; }
+    .wrapper .sidebar-wrapper .sidebar-burger-menu {
+      display: block; }
+  .wrapper .content-wrapper {
+    width: 100%;
+    height: calc(100% - 60px);
+    padding-top: 60px;
+    margin-top: 60px;
+    margin-left: 0;
+    position: relative; }
+    .wrapper .content-wrapper .row .col-content {
+      width: initial;
+      max-width: 100%;
+      z-index: 200;
+      position: initial;
+      left: initial;
+      top: initial;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none; }
+      .wrapper .content-wrapper .row .col-content#hiimrio h1 {
+        font-size: 38px; }
+        .wrapper .content-wrapper .row .col-content#hiimrio h1 .logo {
+          width: 30px;
+          transform: translate(2px, 1px);
+          height: 30px; }
+      .wrapper .content-wrapper .row .col-content#hiimrio h2 {
+        font-size: 12px; }
+      .wrapper .content-wrapper .row .col-content#hiimrio button {
+        font-size: 12px; }
+      .wrapper .content-wrapper .row .col-content#timeline {
+        display: initial;
+        flex: none;
+        width: 100%; }
+      .wrapper .content-wrapper .row .col-content#aboutme, .wrapper .content-wrapper .row .col-content#skillsexperience {
+        flex: none;
+        display: initial;
+        left: 0;
+        position: initial;
+        margin: 0 0;
+        padding: 12px;
+        width: 100%;
+        background-color: #252627; }
+        .wrapper .content-wrapper .row .col-content#aboutme h1, .wrapper .content-wrapper .row .col-content#skillsexperience h1 {
+          font-size: 38px;
+          margin: 0 0;
+          padding: 12px; }
+        .wrapper .content-wrapper .row .col-content#aboutme p, .wrapper .content-wrapper .row .col-content#skillsexperience p {
+          font-size: 12px;
+          padding: 12px;
+          width: 100%;
+          margin: 0 0; }
+    .wrapper .content-wrapper .row .col-media#initial {
+      top: calc(15% + 60px);
+      right: -15%; }
+    .wrapper .content-wrapper .row .col-media#websoar {
+      height: 310px;
+      width: initial;
+      top: initial;
+      display: initial;
+      position: initial;
+      right: initial;
+      animation: none;
+      background-size: cover; }
+    .wrapper .content-wrapper .row .col-media#ajaxsass {
+      display: inline-flex;
+      position: relative;
+      overflow: hidden;
+      max-width: 100vw;
+      align-items: flex-start;
+      height: initial;
+      width: initial;
+      transform: scale(1.4); }
+      .wrapper .content-wrapper .row .col-media#ajaxsass canvas {
+        width: 100%;
+        height: auto; } }
 
 /*# sourceMappingURL=media.css.map */

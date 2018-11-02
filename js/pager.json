@@ -1,0 +1,22 @@
+{
+  "0": {
+      "name": "HOME",
+      "path": "../views/home.html"
+    },
+    "1": {
+      "name": "ABOUT",
+      "path": "../views/about.html"
+  },
+    "2": {
+      "name": "SKILLS",
+      "path": "../views/skills.html"
+  },
+    "3": {
+      "name": "WORK",
+      "path": "../views/work.html"
+  },
+    "4": {
+      "name": "CONTACT",
+      "path": "../views/contact.html"
+  }
+}

@@ -17,10 +17,115 @@ $textColor: #ffffff;
 $textAccentColor: #7a7a7a;
 $navColor: #181818;
 
-$stdFontSize: 12px;
+$stdFontSize: 14px;
 $headerFontSize: 56px;
 $transitionTime: 300ms;
 $navIconSize: 40%;
 
 $prim : #0089B6;
 $scnd: #00B69A;
+
+@keyframes cssload-fold-thecube {
+  0%, 10% {
+    transform: perspective(108px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    transform: perspective(108px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    transform: perspective(108px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@-o-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -o-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -o-transform: perspective(108px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -o-transform: perspective(108px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -ms-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -ms-transform: perspective(108px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -ms-transform: perspective(108px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -webkit-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -webkit-transform: perspective(108px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -webkit-transform: perspective(108px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes cssload-fold-thecube {
+  0%, 10% {
+    -moz-transform: perspective(108px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    -moz-transform: perspective(108px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    -moz-transform: perspective(108px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in{
+  from { opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0)skewY(-4deg);
+  }
+  25% {
+    transform: translate(-13px, 6px)skewY(-4deg);
+  }
+  75% {
+    transform: translate(13px, -6px) skewY(4deg);
+  }
+  100% {
+    transform: translate(0, 0)skewY(-4deg);
+  }
+}
