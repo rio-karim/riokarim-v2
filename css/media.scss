@@ -66,7 +66,7 @@
     }
     .content-wrapper{
       width:100%;
-      height:auto;
+      height:100%;
       padding-top:60px;
       margin-top:60px;
       margin-left:0;
@@ -166,6 +166,7 @@
             flex:none;
             padding:0 0;
             height:initial;
+            height:initial;
             &#contactme{
               margin-top:$stdMargin;
               flex:none;
@@ -229,6 +230,15 @@
               width:-webkit-fill-available;
               height:300px;
             }
+          }
+        }
+      }
+      .rubix{
+        li[data-rubix]{
+          min-width:100%;
+          min-height:240px;
+          &:not(:last-child){
+            margin-bottom:$stdMargin;
           }
         }
       }

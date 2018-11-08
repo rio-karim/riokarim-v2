@@ -2,6 +2,7 @@ $(document).ready(function()
 {
   $.Spinner = new Spinner();
   $.Spinner.start();
+  let _intervals=[];
   fetch('../js/pager.json').then(function (response) {
     return response.json();
   }).then(function (pager) {
@@ -51,65 +52,103 @@ $(document).ready(function()
     */
   }
 
-  function Rubix(container, options){
-    let self = this;
-    self.container = container;
-    self.cache = setImages();
-    function setImages(){
-      let nodes = container[0].children
-      _.extend(container[0].style, {
-        position: "absolute",
-        top: "0",
-        left: "0",
-        width: "100%",
-        height: "100%",
-        display:"flex",
-        flexFlow:"row wrap",
-      });
-      _.each(nodes, function(node){
-        let imgSrc = node.dataset.rubix;
-        _.extend(node.style, {
-          background: "url(' "+imgSrc+ "') center center no-repeat",
-          backgroundSize: "cover",
-          flexBasis: "25%",
+    $.Rubix = function(el){
+    let container = el;
+    let _cache = $('*[data-cache]');
+    let _displayed =$('*[data-rubix]:not([data-cache="true"])');
+    let isstart = true;
+    _setImages();
+    function _setImages(){
+      if(isstart){
+        let nodes = container[0].children
+        _.extend(container[0].style, {
+          position: "absolute",
+          top: "0",
+          left: "0",
+          width: "100%",
+          height: "100%",
+          display:"flex",
+          flexFlow:"row wrap",
         });
-      })
-      return cacheImages(nodes)
+        _.each(nodes, function(node){
+          let imgSrc = node.dataset.rubix;
+          _.extend(node.style, {
+            background: "url(' "+imgSrc+ "') center center no-repeat",
+            backgroundSize: "cover",
+            flexBasis: "33.33%",
+          });
+        });
+        _cacheImages(nodes)
+        isstart = true;
+      }
     }
-    function cacheImages(nodes){
+    function _cacheImages(nodes){
+      _.each(nodes, function(node){
+        if(node.dataset.cache === "true"){
+          node.style.display = "none";
+        }
+      });
+      _cycleCache({ nodes : nodes, interval: 3000, i: 2})
+    }
+
+    function _cycleCache(options){
+      _.each(_intervals, function(intervalId){
+        clearInterval(intervalId)
+      });
+        let cycler = setInterval(function(){
+        let idxReplace = _.random(0, (_displayed.length-1))
+          let displayRaw = $('*[data-rubix]:not([data-cache="true"]):nth-of-type('+(idxReplace+1)+')')
+          displayRaw.fadeTo(1000, 0)
+          setTimeout(function(){
+
+            let idxCache =  _.random(0, (_cache.length-1))
+            console.log(displayRaw)
+            let cacheImg = $('*[data-cache="true"]')[idxCache]
+            let displayImg = $('*[data-rubix]')[idxReplace]
+            let store = displayImg.style.backgroundImage;
+            displayImg.style.backgroundImage =  cacheImg.style.backgroundImage
+            cacheImg.style.backgroundImage = store
+
+            displayRaw.fadeTo(1000, 1)
+          },1000)
+      } ,options.interval);
+      _intervals.push(cycler)
+    }
+  }
+
+  /*4
+      function cacheImages(nodes){
       let cache = [];
       _.each(nodes, function(node, i){
         if (i >= 12){
           cache.push(node)
+          _.extend(nodes[i].style, {
+            display: "none",
+          })
         }
       });
-      _.each(cache, function(image){
-        let idx = _.indexOf(nodes, image)
-        _.extend(nodes[idx].style, {
-          display: "none",
-        })
-      })
-
       return fadeTime(cache)
     }
     function fadeTime(cache){
       let nodes =  container[0].children;
       setInterval(function() {
-        let node = nodes[_.random(0, 12)]
-        $('li[data-rubix="' + node.dataset.rubix + '"]').fadeOut();
-        var idx = _.random(0, cache.length)
-        _.extend(node.style, {
-          background: self.cache[idx].style.background,
+        let idz = _.random(0, 12)
+        $('li[data-rubix="' + nodes[idz].dataset.rubix + '"]').fadeOut();
+        let idx = _.random(0, cache.length)
+        console.log(nodes[idz])
+        _.extend(nodes[idz].style, {
+          background: self.cache[idx].style.background
         })
+
+        cache.push(nodes[idz])
         delete self.cache[idx];
         $('li[data-rubix="' + node.dataset.rubix + '"]').fadeIn();
 
-        cache.push(node)
         console.log(cache)
       }, 4000);
       return cache;
     }
-  }
+   */
 
   /**
    * @constructor
@@ -219,12 +258,7 @@ $(document).ready(function()
   {
     setTimeout(function()
     {
-
-      const rubix = new Rubix($('.rubix'))
-
-      console.log(rubix)
       $.Spinner.stop();
-
       $('.content-wrapper').addClass('active');
     }, $.Spinner.timer)
   }

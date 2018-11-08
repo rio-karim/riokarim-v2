@@ -124,7 +124,7 @@
       display: block; }
   .wrapper .content-wrapper {
     width: 100%;
-    height: auto;
+    height: 100%;
     padding-top: 60px;
     margin-top: 60px;
     margin-left: 0;
@@ -201,6 +201,7 @@
       width: fit-content;
       flex: none;
       padding: 0 0;
+      height: initial;
       height: initial; }
       .wrapper .content-wrapper .row .col-contact#contactme {
         margin-top: 12px;
@@ -244,6 +245,11 @@
         margin: 24px;
         flex: none;
         width: -webkit-fill-available;
-        height: 300px; } }
+        height: 300px; }
+    .wrapper .content-wrapper .rubix li[data-rubix] {
+      min-width: 100%;
+      min-height: 240px; }
+      .wrapper .content-wrapper .rubix li[data-rubix]:not(:last-child) {
+        margin-bottom: 12px; } }
 
 /*# sourceMappingURL=media.css.map */
