@@ -1,7 +1,133 @@
+<script>
+    let latlong = {lat: 51.575969, lng: -3.220290};
+    function initMap() {
+      let map = new google.maps.Map(document.getElementById('googlemaps'), {
+        center: latlong,
+        zoom: 8,
+        styles: [
+          {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+          {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+          {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+          {
+            featureType: 'administrative.locality',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#7a7a7a'}]
+          },
+          {
+            featureType: 'poi',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'geometry',
+            stylers: [{color: '#263c3f'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#6b9a76'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#38414e'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#212a37'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#9ca5b3'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry',
+            stylers: [{color: '#038EC9'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#1f2835'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#f3d19c'}]
+          },
+          {
+            featureType: 'transit',
+            elementType: 'geometry',
+            stylers: [{color: '#2f3948'}]
+          },
+          {
+            featureType: 'transit.station',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'geometry',
+            stylers: [{color: '#17263c'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#515c6d'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.stroke',
+            stylers: [{color: '#17263c'}]
+          }
+        ]
+      });
+
+      setTimeout(function()
+      {
+        new google.maps.Marker({
+          position: latlong,
+          map: map,
+          title: 'My Location',
+          animation: google.maps.Animation.DROP,
+          //icon: image
+        })
+      }, $.Spinner.timer)
+    }
+
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ZTauGtl8JGYAIo-GE-K-GrvbgufkwK8&callback=initMap"></script>
 <div class="container-fluid">
     <div class="row">
-        <div id="contactme" class="col col-contact col-6"></div>
-        <div id="googlemaps" class="col col-6"></div>
+        <div id="contactme" class="col col-contact">
+            <form action="/php/contact.php" method="post" autocomplete="off">
+                <h1 class="header header-color">Contact me</h1>
+                <p class="text">If you have any questions or would like a chat, please don't hesitate to contact me below...</p>
+                <div class="row">
+                    <div class="form-group">
+                        <input class="form__input text" type="text" id="name" name="Name" placeholder="Name" required>
+                        <label class="input__label--highlight" for="name"></label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form__input text" type="email" name="Email" id="email" placeholder="Email" required>
+                        <label class="input__label--highlight" for="email"></label>
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <input class="form__input text" type="text" placeholder="Subject" id="subject" required>
+                    <label class="input__label--highlight" for="subject"></label>
+                </div>
+                <div class="form-group col-12">
+                    <textarea class="form__input form__input--textarea text" name="message" id="message" style="resize:none;" placeholder="Message" required rows="6"></textarea> <span class="input__select--highlight"></span>
+                    <label class="input__label--highlight" for="message"></label>
+                </div>
+                <button class="btn btn-light">Send</button>
+            </form>
+        </div>
+        <div id="googlemaps" class="col col-contact"></div>
     </div>
 
 </div>

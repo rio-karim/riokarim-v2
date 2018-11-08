@@ -13,7 +13,7 @@
   },
     "3": {
       "name": "WORK",
-      "path": "../views/work.html"
+      "path": "../views/gallery.html"
   },
     "4": {
       "name": "CONTACT",

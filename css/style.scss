@@ -4,16 +4,6 @@
   box-sizing:border-box;
 }
 
-.construction{
- position:absolute;
-  left:0;
-  right:0;
-  top:50%;
-  text-align:center;
-  color:$secondaryColor;
-  text-transform:uppercase;
-}
-
 html, body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +13,6 @@ html, body {
 }
 
 body {
-
   overflow: hidden;
   font-family: 'Raleway', sans-serif;
 }
@@ -68,11 +57,15 @@ body {
   font-size:$stdFontSize;
   line-height:20px;
 
-  letter-spacing:1px;
+  letter-spacing:.7px;
 }
 
 .col{
-  padding:$stdMargin;
+  padding-left:$stdMargin;
+  padding-right: $stdMargin;
+  padding-top: $stdMargin;
+  padding-bottom: $stdMargin;
+
 }
 
 .wrapper {
@@ -178,23 +171,23 @@ body {
         }
         /*
         &[data-nav="HOME"]{
-          background: url("../resources/images/icons/house.svg") center center no-repeat;
+          background: url("../src/images/icons/house.svg") center center no-repeat;
           background-size:$navIconSize;
         }
         &[data-nav="ABOUT"]{
-          background: url("../resources/images/icons/avatar.svg") center center no-repeat;
+          background: url("../src/images/icons/avatar.svg") center center no-repeat;
           background-size:$navIconSize;
         }
         &[data-nav="SKILLS"]{
-          background: url("../resources/images/icons/electron.svg") center center no-repeat;
+          background: url("../src/images/icons/electron.svg") center center no-repeat;
           background-size:$navIconSize;
         }
         &[data-nav="WORK"]{
-          background: url("../resources/images/icons/portfolio.svg") center center no-repeat;
+          background: url("../src/images/icons/portfolio.svg") center center no-repeat;
           background-size:$navIconSize;
         }
         &[data-nav="CONTACT"]{
-          background: url("../resources/images/icons/chat-balloon.svg") center center no-repeat;
+          background: url("../src/images/icons/chat-balloon.svg") center center no-repeat;
           background-size:$navIconSize;
         }
         */
@@ -250,7 +243,7 @@ body {
     background: $bodyColor;
     color: $textColor;
     opacity:1;
-    transition: all 200ms ease-in-out;
+    transition: all 400ms ease;
     a{
       cursor:pointer;
       color: $secondaryColor;
@@ -280,7 +273,7 @@ body {
                 width:48px;
                 height:46.7px;
                 transform:translate($stdMargin/4, .8px);
-                background: url("../resources/images/logo/initial.png") center center no-repeat;
+                background: url("../src/images/logo/initial.png") center center no-repeat;
                 background-size:cover;
               }
             }
@@ -291,10 +284,12 @@ body {
               margin:$stdMargin 0;
             }
           }
-          &#timeline{
-            display:none;
-          }
           &#aboutme, &#skillsexperience{
+            #timeline{
+              display: inline;
+              height: auto;
+              width: 100%;
+            }
             h1{
               margin: $stdMargin 0;
               margin-bottom: $stdMargin * 4;
@@ -322,7 +317,7 @@ body {
             width:675px;
             right:5%;
             z-index:$zIndex-1;
-            background: url("../resources/images/logo/3dLogo.png") center center no-repeat;
+            background: url("../src/images/logo/3dLogo.png") center center no-repeat;
             background-size:100%;
           }
           &#websoar{
@@ -336,16 +331,82 @@ body {
             animation-delay: 500ms;
             background-size:contain;
             transform: translate(0, 0)skewY(-4deg);
-            background: url("../resources/images/logo/websoar.png") center center no-repeat;
+            background: url("../src/images/logo/websoar.png") center center no-repeat;
           }
         }
         &-contact{
-
+          flex:1;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
           &#contactme{
+            flex:.8;
+            form{
+              margin:$stdMargin $stdMargin*4;
+              h1{
+                margin: $stdMargin 0;
+                margin-bottom:$stdMargin * 4;
+              }
 
+              .row{
+                margin-left:0;
+                margin-right:0;
+                flex-wrap:nowrap;
+                .form-group{
+                  width:50%;
+                  &:first-child{
+                    margin-right:$stdMargin;
+                  }
+                }
+              }
+              .form-group{
+                border:none;
+                position:relative;
+                background:#37393b;
+                color: #9c9c9c;
+                margin-bottom:0;
+                padding:0 0;
+                margin-top:$stdMargin;
+                .form__input, textarea{
+                  border:none;
+                  background:#37393b;
+                  padding:$stdMargin *1.5;
+                  height:100%;
+                  color: $textColor;
+                  width:100%;
+                  &:focus{
+                    color: $textColor;
+                    outline-width: 0;
+                    ~.input__label--highlight{
+                      width:100%;
+                    }
+                  }
+                  &:valid{
+                    ~.input__label--highlight{
+                      background-color:limegreen;
+                      width:100%;
+                    }
+                  }
+                }
+                .input__label--highlight{
+                  position:absolute;
+                  left:0;
+                  bottom:0;
+                  width:0;
+                  height:2px;
+                  background-color:$secondaryColor;
+                  transition:all $transitionTime ease;
+                }
+              }
+
+              .btn{
+                margin-top:$stdMargin;
+                float:right;
+              }
+            }
           }
           &#googlemaps{
-            background:red;
           }
         }
       }

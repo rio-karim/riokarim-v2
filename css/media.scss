@@ -66,7 +66,7 @@
     }
     .content-wrapper{
       width:100%;
-      height:calc(100% - 60px);
+      height:auto;
       padding-top:60px;
       margin-top:60px;
       margin-left:0;
@@ -84,8 +84,12 @@
             -ms-transform:none;
             transform:none;
             &#hiimrio{
+              padding:0;
+              margin-left:$stdMargin;
               h1{
-                font-size:38px;
+                font-size: 38px;
+                padding:0 0;
+                margin-bottom:$stdMargin;
                 .logo{
                     width:30px;
                     transform: translate(2px, 1px);
@@ -99,11 +103,6 @@
                 font-size:12px;
               }
             }
-            &#timeline{
-              display: initial;
-              flex:none;
-              width:100%;
-            }
             &#aboutme, &#skillsexperience{
               flex:none;
               display: initial;
@@ -114,10 +113,9 @@
               width:100%;
               background-color:$bodyColor;
               h1{
-
-                font-size:38px;
-                margin:0 0;
-                padding:$stdMargin;
+                font-size: 38px;
+                padding:0 0;
+                margin:$stdMargin*4 $stdMargin;
               }
               p{
 
@@ -159,6 +157,77 @@
                 width:100%;
                 height:auto;
               }
+            }
+          }
+
+          &-contact{
+            margin:0 $stdMargin*2;
+            width: fit-content;
+            flex:none;
+            padding:0 0;
+            height:initial;
+            &#contactme{
+              margin-top:$stdMargin;
+              flex:none;
+              padding:$stdMargin;
+              form{
+                margin:0 auto;
+                h1{
+                  font-size: 38px;
+                  padding:$stdMargin 0;
+                  margin-bottom:$stdMargin*2
+                }
+                .row{
+                  flex-wrap:wrap;
+                  .form-group{
+                    width: 100%;
+                    &:first-child{
+                      margin-right:0;
+                    }
+                  }
+                  .col-6{
+                    width:100%;
+                    max-width:100%;
+                  }
+                }
+                .form-group{
+                  .form__input, textarea{
+                    &:focus{
+                      color: $textColor;
+                      outline-width: 0;
+                      ~.input__label--highlight{
+                        width:100%;
+                      }
+                    }
+                    &:valid{
+                      ~.input__label--highlight{
+                        background-color:limegreen;
+                        width:100%;
+                      }
+                    }
+                  }
+                  .input__label--highlight{
+                    position:absolute;
+                    left:0;
+                    bottom:0;
+                    width:0;
+                    height:2px;
+                    background-color:$secondaryColor;
+                    transition:all $transitionTime ease;
+                  }
+                }
+
+                .btn{
+                  margin-top:$stdMargin;
+                  float:right;
+                }
+              }
+            }
+            &#googlemaps{
+              margin:$stdMargin * 2;
+              flex:none;
+              width:-webkit-fill-available;
+              height:300px;
             }
           }
         }

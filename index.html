@@ -39,22 +39,22 @@
                    threaten San Francisco Bay with biological
                    weapons."/>
         <!--RESOURCES-->
-        <link rel="manifest" href="manifest.json">
+        <link rel="manifest" href="/manifest.json">
         <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-        <link rel="shortcut icon" href="resources/images/favicon/favicon-16x16.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="resources/images/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="resources/images/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="resources/images/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="resources/images/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="resources/images/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="resources/images/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="resources/images/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="resources/images/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="resources/images/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="resources/images/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="resources/images/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png">
+        <link rel="shortcut icon" href="src/images/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="src/images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="src/images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="src/images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="src/images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="src/images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="src/images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="src/images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="src/images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="src/images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="src/images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="src/images/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="src/images/favicon/favicon-16x16.png">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
@@ -69,18 +69,21 @@
         </script>
         <!--Dependencies-->
         <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-grid.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/media.css">
         <link rel="stylesheet" href="css/grid.css">
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-grid.css">
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/jquery/jquery-ui.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.js"></script>
         <script src="vendor/inject/inject.js"></script>
-        <script src="vendor/jquery/jquery.tagcanvas.min.js"></script>
+        <script async defer src="vendor/jquery/jquery.tagcanvas.min.js"></script>
         <script src="vendor/underscore/underscore.js"></script>
         <script async defer src="js/index.js"></script>
+
     </head>
     <body>
 
@@ -88,7 +91,7 @@
 
         <div class="sidebar-wrapper">
             <div class="sidebar-logo">
-                <img src="resources/images/logo/initial.png" alt="Logo">
+                <img src="src/images/logo/initial.png" alt="Logo">
                 <span>Rio</span>
             </div>
             <div class="sidebar-burger-menu mod model-6">
@@ -100,18 +103,18 @@
             </div>
             <div class="sidebar-nav">
                 <nav class="sidebar-nav__list">
-                    <div data-nav="HOME" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/house.svg" alt="Home"><span>Home</span></div>
-                    <div data-nav="ABOUT" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/avatar.svg" alt="Avatar"><span>About</span></div>
-                    <div data-nav="SKILLS" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/electron.svg" alt="Electron"><span>Skills</span></div>
-                    <div data-nav="WORK" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/portfolio.svg" alt="Work"><span>My Work</span></div>
-                    <div data-nav="CONTACT" class="sidebar-nav__item"><img class="hover" src="/resources/images/icons/chat-balloon.svg" alt="Chat"><span>Contact</span></div>
+                    <div data-nav="HOME" class="sidebar-nav__item"><img class="hover" src="/src/images/icons/house.svg" alt="Home"><span>Home</span></div>
+                    <div data-nav="ABOUT" class="sidebar-nav__item"><img class="hover" src="/src/images/icons/avatar.svg" alt="Avatar"><span>About</span></div>
+                    <div data-nav="SKILLS" class="sidebar-nav__item"><img class="hover" src="/src/images/icons/electron.svg" alt="Electron"><span>Skills</span></div>
+                    <div data-nav="WORK" class="sidebar-nav__item"><img class="hover" src="/src/images/icons/portfolio.svg" alt="Work"><span>My Work</span></div>
+                    <div data-nav="CONTACT" class="sidebar-nav__item"><img class="hover" src="/src/images/icons/chat-balloon.svg" alt="Chat"><span>Contact</span></div>
 
                 </nav>
             </div>
             <div class="sidebar-social">
-                <a href="https://github.com/rio-karim" target="_blank" class="sidebar-nav__item"><img src="/resources/images/icons/github-character.svg" alt="Home"></a>
-                <a href="https://www.facebook.com/RKweb.contact" target="_blank" class="sidebar-nav__item"><img src="/resources/images/icons/facebook-logo.svg" alt="Home"></a>
-                <a href="https://www.linkedin.com/in/riokarim/" target="_blank" class="sidebar-nav__item"><img src="/resources/images/icons/linkedin-logo.svg" alt="Home"></a>
+                <a href="https://github.com/rio-karim" target="_blank" class="sidebar-nav__item"><img src="/src/images/icons/github-character.svg" alt="Home"></a>
+                <a href="https://www.facebook.com/RKweb.contact" target="_blank" class="sidebar-nav__item"><img src="/src/images/icons/facebook-logo.svg" alt="Home"></a>
+                <a href="https://www.linkedin.com/in/riokarim/" target="_blank" class="sidebar-nav__item"><img src="/src/images/icons/linkedin-logo.svg" alt="Home"></a>
             </div>
         </div>
         <div class="content-wrapper">
