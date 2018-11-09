@@ -29,7 +29,7 @@ $(document).ready(function()
     self.lib = lib;
     self.pageStack = [];
     self.setPage = function (view) {
-      let isNav = _.find(self.lib, function(navItem){ return navItem.name == view; })
+      let isNav = _.find(self.lib, function(navItem){ return navItem.name === view; });
       if (!!isNav) {
         ij.cookie.set('view', view, 7);
         self.currentView = view;
@@ -41,17 +41,13 @@ $(document).ready(function()
       return self.currentView;
     };
     return self;
-    /*
-    self.stackPage = function (page)
-    { self.pageStack.push({ name : name, html : page})
-    self.popPage = function ( view )
-    {
-      let isPage =  _.find(self.pageStack, function(pageItem){ return pageItem.name == view; })
-      return isPage || false;
-    };
-    */
   }
 
+  /**
+   *
+   * @param el
+   * @constructor
+   */
     $.Rubix = function(el){
     let container = el;
     let _cache = $('*[data-cache]');
@@ -78,10 +74,16 @@ $(document).ready(function()
             flexBasis: "33.33%",
           });
         });
-        _cacheImages(nodes)
+        _cacheImages(nodes);
         isstart = true;
       }
     }
+
+      /**
+       *
+       * @param nodes
+       * @private
+       */
     function _cacheImages(nodes){
       _.each(nodes, function(node){
         if(node.dataset.cache === "true"){
@@ -91,64 +93,35 @@ $(document).ready(function()
       _cycleCache({ nodes : nodes, interval: 3000, i: 2})
     }
 
+      /**
+       *
+       * @param options
+       * @private
+       */
     function _cycleCache(options){
       _.each(_intervals, function(intervalId){
         clearInterval(intervalId)
       });
         let cycler = setInterval(function(){
-        let idxReplace = _.random(0, (_displayed.length-1))
-          let displayRaw = $('*[data-rubix]:not([data-cache="true"]):nth-of-type('+(idxReplace+1)+')')
+        let idxReplace = _.random(0, (_displayed.length-1));
+          let displayRaw = $('*[data-rubix]:not([data-cache="true"]):nth-of-type('+(idxReplace+1)+')');
           displayRaw.fadeTo(1000, 0)
           setTimeout(function(){
 
             let idxCache =  _.random(0, (_cache.length-1))
-            console.log(displayRaw)
-            let cacheImg = $('*[data-cache="true"]')[idxCache]
-            let displayImg = $('*[data-rubix]')[idxReplace]
+            console.log(displayRaw);
+            let cacheImg = $('*[data-cache="true"]')[idxCache];
+            let displayImg = $('*[data-rubix]')[idxReplace];
             let store = displayImg.style.backgroundImage;
-            displayImg.style.backgroundImage =  cacheImg.style.backgroundImage
-            cacheImg.style.backgroundImage = store
+            displayImg.style.backgroundImage =  cacheImg.style.backgroundImage;
+            cacheImg.style.backgroundImage = store;
 
             displayRaw.fadeTo(1000, 1)
           },1000)
       } ,options.interval);
       _intervals.push(cycler)
     }
-  }
-
-  /*4
-      function cacheImages(nodes){
-      let cache = [];
-      _.each(nodes, function(node, i){
-        if (i >= 12){
-          cache.push(node)
-          _.extend(nodes[i].style, {
-            display: "none",
-          })
-        }
-      });
-      return fadeTime(cache)
-    }
-    function fadeTime(cache){
-      let nodes =  container[0].children;
-      setInterval(function() {
-        let idz = _.random(0, 12)
-        $('li[data-rubix="' + nodes[idz].dataset.rubix + '"]').fadeOut();
-        let idx = _.random(0, cache.length)
-        console.log(nodes[idz])
-        _.extend(nodes[idz].style, {
-          background: self.cache[idx].style.background
-        })
-
-        cache.push(nodes[idz])
-        delete self.cache[idx];
-        $('li[data-rubix="' + node.dataset.rubix + '"]').fadeIn();
-
-        console.log(cache)
-      }, 4000);
-      return cache;
-    }
-   */
+  };
 
   /**
    * @constructor
@@ -157,7 +130,7 @@ $(document).ready(function()
   {
     let loader = $('.loader-container');
     this.start = function(){
-      $('.content-wrapper').removeClass('active')
+      $('.content-wrapper').removeClass('active');
       loader.show();
       loader.addClass('active');
     };
@@ -181,19 +154,19 @@ $(document).ready(function()
   function _init(view) {
     switch (view) {
       case 'HOME':
-        startHome();
+        _startHome();
         break;
       case 'WORK':
-        startWork()
+        _startWork();
         break;
       case 'SKILLS':
-        startSkills();
+        _startSkills();
         break;
       case 'CONTACT':
-        startContact();
+        _startContact();
         break;
       case 'ABOUT':
-        startAbout();
+        _startAbout();
         break;
       default:
     }
@@ -233,8 +206,9 @@ $(document).ready(function()
 
   /**
    *
+   * @private
    */
-  function startHome()
+  function _startHome()
   {
     setTimeout(function()
     {
@@ -254,7 +228,11 @@ $(document).ready(function()
     }, $.Spinner.timer)
   }
 
-  function startWork()
+  /**
+   *
+   * @private
+   */
+  function _startWork()
   {
     setTimeout(function()
     {
@@ -263,16 +241,29 @@ $(document).ready(function()
     }, $.Spinner.timer)
   }
 
-  function startContact(){
+  /**
+   *
+   * @private
+   */
+  function _startContact(){
     setTimeout(function()
     {
       $.Spinner.stop();
-
+      $('form').on('submit', function (e) {
+          $('button[name="submit"] span').each(function(){
+            $(this).toggleClass('active')
+          })
+        })
       //AIzaSyC8ZTauGtl8JGYAIo-GE-K-GrvbgufkwK8
       $('.content-wrapper').addClass('active')
     }, $.Spinner.timer)
   }
-  function startAbout()
+
+  /**
+   *
+   * @private
+   */
+  function _startAbout()
   {
     setTimeout(function()
     {
@@ -282,7 +273,11 @@ $(document).ready(function()
     }, $.Spinner.timer)
   }
 
-  function startSkills()
+  /**
+   *
+   * @private
+   */
+  function _startSkills()
   {
     setTimeout(function()
     {

@@ -402,6 +402,33 @@ body {
             .wrapper .content-wrapper .row .col-contact#contactme form .btn {
               margin-top: 12px;
               float: right; }
+@keyframes load_spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+              .wrapper .content-wrapper .row .col-contact#contactme form .btn .form-loader.active {
+                display: flex; }
+              .wrapper .content-wrapper .row .col-contact#contactme form .btn .form-loader {
+                width: 20px;
+                height: 20px;
+                justify-content: center;
+                align-items: center;
+                margin: auto; }
+              .wrapper .content-wrapper .row .col-contact#contactme form .btn .form-loader::before {
+                content: "";
+                color: white;
+                height: 10px;
+                width: 10px;
+                background: transparent;
+                border-radius: 50%;
+                border: 3px solid transparent;
+                border-color: #3FC4E4 #3FC4E4 transparent transparent;
+                animation: load_spin .6s ease-in-out infinite; }
+              .wrapper .content-wrapper .row .col-contact#contactme form .btn span:not(.active) {
+                display: none; }
+              .wrapper .content-wrapper .row .col-contact#contactme form .btn.active {
+                border-color: white; }
 
 .loader-container {
   position: fixed;

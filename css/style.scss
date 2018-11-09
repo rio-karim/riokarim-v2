@@ -403,6 +403,41 @@ body {
               .btn{
                 margin-top:$stdMargin;
                 float:right;
+                @keyframes load_spin{
+                  0%{
+                    transform:rotate(0deg);
+                  }
+                  100%{
+                    transform:rotate(360deg);
+                  }
+                }
+                .form-loader.active{
+                  display:flex;
+                }
+                .form-loader{
+                  width:20px;
+                  height:20px;
+                  justify-content:center;
+                  align-items:center;
+                  margin:auto;
+                }
+                .form-loader::before{
+                  content:"";
+                  color:white;
+                  height:10px;
+                  width:10px;
+                  background:transparent;
+                  border-radius:50%;
+                  border:3px solid transparent;
+                  border-color:$secondaryColor $secondaryColor transparent transparent;
+                  animation:load_spin .6s ease-in-out infinite;
+                }
+                span:not(.active){
+                  display:none;
+                }
+                &.active{
+                  border-color: white;
+                }
               }
             }
           }
