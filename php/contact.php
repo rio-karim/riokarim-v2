@@ -16,5 +16,5 @@
         $headers .="Content-Type:text/html;charset=UTF-8" ."\r\n";
         $headers .= "From: New Message <noreply@riokarim.co.uk>" ."\r\n";
         mail($to,$subject,$body,$headers);
-        echo "<script>window.location.href = '../index.html'</script>"
+        echo "<script> window.location.href = 'success.html';</script>";
 ?>

@@ -148,8 +148,6 @@ body {
   font-size: 13px;
   line-height: 20px;
   letter-spacing: .7px; }
-  .textp {
-    margin: 12px 0; }
 
 .col {
   padding-left: 12px;
@@ -342,7 +340,7 @@ body {
       opacity: 0; }
     .wrapper .content-wrapper .row {
       overflow: hidden; }
-      .wrapper .content-wrapper .row::after {
+      .wrapper .content-wrapper .row:not(.row-contact)::after {
         content: "</html>";
         position: absolute;
         bottom: 36px;
@@ -374,6 +372,8 @@ body {
             background-size: cover; }
         .wrapper .content-wrapper .row .col-content#hiimrio h2 {
           margin: 12px 0; }
+        .wrapper .content-wrapper .row .col-content#hiimrio p {
+          margin: 12px 0; }
         .wrapper .content-wrapper .row .col-content#hiimrio button {
           margin: 12px 0; }
         .wrapper .content-wrapper .row .col-content#aboutme #timeline, .wrapper .content-wrapper .row .col-content#skillsexperience #timeline {
@@ -383,6 +383,8 @@ body {
         .wrapper .content-wrapper .row .col-content#aboutme h1, .wrapper .content-wrapper .row .col-content#skillsexperience h1 {
           margin: 12px 0;
           margin-bottom: 48px; }
+        .wrapper .content-wrapper .row .col-content#aboutme p, .wrapper .content-wrapper .row .col-content#skillsexperience p {
+          margin: 12px 0; }
       .wrapper .content-wrapper .row .col-media#ajaxsass {
         position: absolute;
         right: 0;
@@ -419,6 +421,7 @@ body {
         justify-content: center;
         height: 100vh; }
         .wrapper .content-wrapper .row .col-contact#contactme {
+          z-index: 200;
           flex: .8; }
           .wrapper .content-wrapper .row .col-contact#contactme form {
             margin: 12px 48px; }

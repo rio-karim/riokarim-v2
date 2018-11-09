@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Rio Karim">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="CryptoForge | ICO Rankings">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="CryptoForge | ICO Rankings">
+    <meta property="og:locale" content="en_EN">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="../../../../htdocs/cryptotask/css/reset.css" rel="stylesheet">
+    <title>CryptoForge | ICO Rankings</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Tajawal" rel="stylesheet">
+
+</head>
+<body style="background:#252627">
+<div class="container-fluid">
+    <div class="success-message">Message sent. Redirecting in... <span class="redirect-count"></span></div>
+</div>
+
+<body>
+<style>
+    .success-message{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size:16px;
+        color:#3FC4E4;
+        text-transform:uppercase;
+        letter-spacing:1.2px;
+    }
+</style>
+
+<script>
+  var seconds = 3
+  setInterval(function(){
+    if (seconds == 0){
+      Redirect()
+    }
+    document.querySelector('.redirect-count').innerText = seconds;
+    seconds--;
+  }, 1000)
+  function Redirect() {
+    window.location = 'http://riokarim.co.uk'
+  }
+
+</script>

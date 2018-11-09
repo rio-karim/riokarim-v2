@@ -92,9 +92,6 @@ body {
   font-size:$stdFontSize;
   line-height:20px;
   letter-spacing:.7px;
-  &p{
-    margin:$stdMargin 0;
-  }
 }
 
 .col{
@@ -316,19 +313,19 @@ body {
       opacity:0;
     }
     .row{
-
-
-      &::after{
-        content: "</html>";
-        position:absolute;
-        bottom:$stdMargin *3;
-        left:2rem;
-        width:50px;
-        color:$tagColor;
-        font-style: italic;
-        font-size: $tagFontSize;
-        font-family: 'Dancing Script', cursive;
-        letter-spacing:3px;
+      &:not(.row-contact){
+        &::after{
+          content: "</html>";
+          position:absolute;
+          bottom:$stdMargin *3;
+          left:2rem;
+          width:50px;
+          color:$tagColor;
+          font-style: italic;
+          font-size: $tagFontSize;
+          font-family: 'Dancing Script', cursive;
+          letter-spacing:3px;
+        }
       }
       overflow: hidden;
       .col{
@@ -357,6 +354,10 @@ body {
             h2{
               margin:$stdMargin 0;
             }
+            p{
+
+              margin:$stdMargin 0;
+            }
             button{
               margin:$stdMargin 0;
             }
@@ -370,6 +371,11 @@ body {
             h1{
               margin: $stdMargin 0;
               margin-bottom: $stdMargin * 4;
+            }
+
+            p{
+
+              margin:$stdMargin 0;
             }
           }
         }
@@ -414,6 +420,7 @@ body {
           justify-content:center;
           height:100vh;
           &#contactme{
+            z-index: $zIndex-2;
             flex:.8;
             form{
               margin:$stdMargin $stdMargin*4;
