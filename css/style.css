@@ -104,10 +104,39 @@ body {
 
 .header {
   color: #ffffff;
+  position: relative;
   font-size: 56px;
   font-weight: 600; }
   .header-color {
     color: #3FC4E4; }
+  .header::before {
+    background: transparent;
+    content: "<h1>";
+    position: absolute;
+    top: -18px;
+    left: 0;
+    width: 50px;
+    color: #595959;
+    font-style: italic;
+    font-size: 13px;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 3px; }
+  .header::after {
+    background: transparent;
+    content: "</h1>";
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    width: 50px;
+    color: #595959;
+    font-style: italic;
+    font-size: 13px;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 3px; }
+  .header-home::after {
+    bottom: 70px;
+    right: 15%;
+    left: initial; }
 
 .subheader {
   font-weight: 600;
@@ -119,6 +148,8 @@ body {
   font-size: 13px;
   line-height: 20px;
   letter-spacing: .7px; }
+  .textp {
+    margin: 12px 0; }
 
 .col {
   padding-left: 12px;
@@ -271,6 +302,7 @@ body {
       display: none; }
   .wrapper .content-wrapper {
     position: relative;
+    position: relative;
     width: calc(100% - 60px);
     margin-left: 60px;
     height: 100%;
@@ -278,6 +310,30 @@ body {
     color: #ffffff;
     opacity: 1;
     transition: all 400ms ease; }
+    .wrapper .content-wrapper::before {
+      background: transparent;
+      content: "<body>";
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      width: 50px;
+      color: #595959;
+      font-style: italic;
+      font-size: 16px;
+      font-family: 'Dancing Script', cursive;
+      letter-spacing: 3px; }
+    .wrapper .content-wrapper::after {
+      background: transparent;
+      content: "</body>";
+      position: absolute;
+      bottom: 60px;
+      left: 60px;
+      width: 50px;
+      color: #595959;
+      font-style: italic;
+      font-size: 16px;
+      font-family: 'Dancing Script', cursive;
+      letter-spacing: 3px; }
     .wrapper .content-wrapper a {
       cursor: pointer;
       color: #3FC4E4;
@@ -286,6 +342,17 @@ body {
       opacity: 0; }
     .wrapper .content-wrapper .row {
       overflow: hidden; }
+      .wrapper .content-wrapper .row::after {
+        content: "</html>";
+        position: absolute;
+        bottom: 36px;
+        left: 2rem;
+        width: 50px;
+        color: #595959;
+        font-style: italic;
+        font-size: 16px;
+        font-family: 'Dancing Script', cursive;
+        letter-spacing: 3px; }
       .wrapper .content-wrapper .row .col-content {
         width: 40%;
         max-width: 100%;
@@ -316,8 +383,6 @@ body {
         .wrapper .content-wrapper .row .col-content#aboutme h1, .wrapper .content-wrapper .row .col-content#skillsexperience h1 {
           margin: 12px 0;
           margin-bottom: 48px; }
-        .wrapper .content-wrapper .row .col-content#aboutme p, .wrapper .content-wrapper .row .col-content#skillsexperience p {
-          margin: 12px 0; }
       .wrapper .content-wrapper .row .col-media#ajaxsass {
         position: absolute;
         right: 0;

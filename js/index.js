@@ -65,6 +65,8 @@ $(document).ready(function()
           height: "100%",
           display:"flex",
           flexFlow:"row wrap",
+          zIndex:"600",
+          backgroundColor: "#252627"
         });
         _.each(nodes, function(node){
           let imgSrc = node.dataset.rubix;
@@ -72,6 +74,8 @@ $(document).ready(function()
             background: "url(' "+imgSrc+ "') center center no-repeat",
             backgroundSize: "cover",
             flexBasis: "33.33%",
+            zIndex:"600",
+            backgroundColor: "#252627"
           });
         });
         _cacheImages(nodes);

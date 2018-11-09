@@ -38,11 +38,46 @@ body {
 
 .header{
   color:$textColor;
+  position:relative;
   font-size:$headerFontSize;
   font-weight:600;
   &-color{
     color:$secondaryColor;
 
+  }
+  &::before{
+    background:transparent;
+    content: "<h1>";
+    position:absolute;
+    top:-$stdMargin*1.5;
+    left:0;
+    width:50px;
+    color:$tagColor;
+    font-style: italic;
+    font-size:$stdFontSize;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing:3px;
+  }
+  &::after{
+    background:transparent;
+    content: "</h1>";
+    position:absolute;
+    bottom:-$stdMargin*2;
+    left:0;
+    width:50px;
+    color:$tagColor;
+    font-style: italic;
+    font-size:$stdFontSize;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing:3px;
+  }
+  &-home {
+
+    &::after {
+      bottom: 70px;
+      right: 15%;
+      left: initial;
+    }
   }
 }
 
@@ -56,8 +91,10 @@ body {
 .text{
   font-size:$stdFontSize;
   line-height:20px;
-
   letter-spacing:.7px;
+  &p{
+    margin:$stdMargin 0;
+  }
 }
 
 .col{
@@ -235,10 +272,36 @@ body {
   }
 
   .content-wrapper{
-
+    position:relative;
+    &::before{
+      background:transparent;
+      content: "<body>";
+      position:absolute;
+      top:$stdMargin *3;
+      left:$stdMargin *3;
+      width:50px;
+      color:$tagColor;
+      font-style: italic;
+      font-size: $tagFontSize;
+      font-family: 'Dancing Script', cursive;
+      letter-spacing:3px;
+    }
+    &::after{
+      background:transparent;
+      content: "</body>";
+      position:absolute;
+      bottom:$stdMargin *5;
+      left:$stdMargin *5;
+      width:50px;
+      color:$tagColor;
+      font-style: italic;
+      font-size: $tagFontSize;
+      font-family: 'Dancing Script', cursive;
+      letter-spacing:3px;
+    }
     position:relative;
     width:calc(100% - 60px);
-    margin-left:60px;
+    margin-left:$navWidth;
     height:100%;
     background: $bodyColor;
     color: $textColor;
@@ -253,6 +316,20 @@ body {
       opacity:0;
     }
     .row{
+
+
+      &::after{
+        content: "</html>";
+        position:absolute;
+        bottom:$stdMargin *3;
+        left:2rem;
+        width:50px;
+        color:$tagColor;
+        font-style: italic;
+        font-size: $tagFontSize;
+        font-family: 'Dancing Script', cursive;
+        letter-spacing:3px;
+      }
       overflow: hidden;
       .col{
         &-content{
@@ -293,10 +370,6 @@ body {
             h1{
               margin: $stdMargin 0;
               margin-bottom: $stdMargin * 4;
-            }
-            p{
-              margin: $stdMargin 0;
-
             }
           }
         }
